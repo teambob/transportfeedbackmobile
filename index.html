@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+</head>
+<body>
+<div id="main" data-role="page">
+<div data-role="header" class="ui-header"  data-theme="b">
+		<h1>Transport Feedback for NSW</h1>
+</div>
+<div role="main" class="ui-content">
+<ul data-role="listview">
+<li><a href="#train">Train</a></li>
+<li><a href="#bus">Bus</a></li>
+<li><a href="#other">Other</a></li>
+</ul>
+</div>
+<div class="ui-body ui-body-a ui-corner-all"><p>This website is not affiliated with Transport NSW.</p><p>&copy; 2015 Usable Efficiency Pty Ltd</p></div>
+</div>
+
+<div id="train" data-role="page">
+<div data-role="header"  data-theme="b">
+		<h1>Train</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext">Back</a>
+</div>
+<div role="main" class="ui-content">
+<form method="POST" action="/en/contact-us/feedback/train.page?submit=true&amp;componentID=1394327529989">
+<input value="train" name="form-id" type="hidden">
+<input id="id-robots" name="Title" type="hidden">
+  <label>Description<textarea name="description" required="required"></textarea></label>
+  <label>Date<input type="date" id="raw-date"></label>
+  <input type="hidden" name="date-of-trip">
+  <label>Begin time<input type="time" id="begin-time"></label>
+  <label>End time<input type="time" id="end-time"></label>
+  <input type="hidden" name="time-of-trip-begin-hour">
+  <input type="hidden" name="time-of-trip-begin-minute">
+  <input type="hidden" name="time-of-trip-end-hour">
+  <input type="hidden" name="time-of-trip-end-minute">
+   
+  <label>Train line
+  <select name="optional-trainline">
+    <option value="T1 North Shore, Northern &amp; Western">T1 North Shore, Northern &amp; Western</option>
+    <option value="T2 Airport, Inner West &amp; South">T2 Airport, Inner West &amp; South</option>
+    <option value="T3 Bankstown">T3 Bankstown</option>
+    <option value="T4 Eastern Suburbs &amp; Illawarra">T4 Eastern Suburbs &amp; Illawarra</option>
+    <option value="T5 Cumberland">T5 Cumberland</option>
+    <option value="T6 Carlingford">T6 Carlingford</option>
+    <option value="T7 Olympic Park">T7 Olympic Park</option>
+    <option value="South West Rail Link">South West Rail Link</option>
+    <option value="Blue Mountains Line">Blue Mountains Line</option>
+    <option value="Central Coast &amp; Newcastle Line">Central Coast &amp; Newcastle Line</option>
+    <option value="South Coast Line">South Coast Line</option>
+    <option value="Southern Highlands Line">Southern Highlands Line</option>
+    <option value="Hunter Line">Hunter Line</option>
+    <option value="Regional Trains and Coaches">Regional Trains and Coaches</option>
+  </select>
+  </label>
+  <label>Station<input type="text" name="optional-station"></label>
+  <label>Direction<input type="text" name="optional-direction"></label>
+  <label>Location of incident<input type="text" name="optional-location-train"></label>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+  <legend>Would you like a response?</legend>
+  <label><input type="radio" name="contact-detail" value="yes">Yes</label>
+  <label><input type="radio" name="contact-detail" value="no">No</label>
+  </fieldset>
+  <label>Name<input type="text" name="contact-detail-name"></label>
+  <label>Email<input type="email" name="contact-detail-email"></label>
+  <label>Phone<input type="tel" name="contact-detail-phone-number"></label>
+  <label>Address<input type="text" name="contact-detail-street-address"></label>
+  <label>Suburb<input type="text" name="contact-detail-suburb"></label>
+  <label>State<input type="text" value="NSW"  name="contact-detail-state"></label>
+  <label>Postcode<input type="text" name="contact-detail-postcode"></label>
+  <button type="submit" data-theme="b" value="Send">Send</button>
+  </form>
+</div>
+</div>
+<div id="bus" data-role="page">
+<div data-role="header" data-theme="b">
+		<h1>Bus</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext">Back</a>
+</div>
+<div role="main" class="ui-content">
+<form method="POST" action="http://www.transportnsw.info/en/contact-us/feedback/bus.page?submit=true&amp;componentID=1394327530087">
+<input value="train" name="form-id" type="hidden">
+<input id="id-robots" name="Title" type="hidden">
+  <label>Description<textarea required="required" name="describe-your-issue"></textarea></label>
+  <label>Date<input type="date" id="raw-date"></label>
+  <hidden name="date-of-trip">
+  <!-- convert times into the correct fields -->
+  <label>Begin time<input type="time" id="begin-time"></label>
+  <label>End time<input type="time" id="end-time"></label>
+  <input type="hidden" name="time-of-trip-begin-hour">
+  <input type="hidden" name="time-of-trip-begin-minute">
+  <input type="hidden" name="time-of-trip-end-hour">
+  <input type="hidden" name="time-of-trip-end-minute">
+  
+  <label>Location of incident<input type="text" name="optional-location"></label>
+  <label>Direction<input type="text" name="optional-direction"></label>
+  <label>Bus route<input type="text" name="optional-route-number"></label>
+  <label>Driver Licence Number<input type="text" name="optional-driver-id" ></label>
+  <label>Bus registration<input type="text" name="bus-registration"></label>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+  <legend>Would you like a response?</legend>
+  <label><input type="radio" name="contact-detail" value="yes">Yes</label>
+  <label><input type="radio" name="contact-detail" value="no">No</label>
+  </fieldset>
+  <label>Name<input type="text" required="required" name="contact-detail-name"></label>
+  <label>Email<input type="email" required="required" name="contact-detail-email"></label>
+  <label>Phone<input type="tel" required="required" name="contact-detail-phone-number"></label>
+  <label>Address<input type="text" name="contact-detail-street-address"></label>
+  <label>Suburb<input type="text" name="contact-detail-suburb"></label>
+  <label>State<input type="text" value="NSW" name="contact-detail-state"></label>
+  <label>Postcode<input type="text" name="contact-detail-postcode"></label>
+  <button type="submit" data-theme="b" value="Send">Send</button>
+</form>
+</div>
+</div>
+<div id="other" data-role="page">
+<div data-role="header" data-theme="b">
+		<h1>Other</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext">Back</a>
+</div>
+<div role="main" class="ui-content">
+<form action="http://www.transportnsw.info/en/contact-us/feedback/other.page?submit=true&amp;componentID=1394327530131">
+<input value="train" name="form-id" type="hidden">
+<input id="id-robots" name="Title" style="visibility: hidden;" type="text">
+
+  <label>Description<textarea name="describe-your-issue" required="required"></textarea></label>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+  <legend>Would you like a response?</legend>
+  <label><input type="radio" name="contact-detail" value="yes">Yes</label>
+  <label><input type="radio" name="contact-detail" value="no">No</label>
+  </fieldset>
+  <label>Name<input type="text" name="contact-detail-name"></label>
+  <label>Email<input type="email" name="contact-detail-email"></label>
+  <label>Phone<input type="tel" name="contact-detail-phone-number"></label>
+  <label>Address<input type="text" name="contact-detail-street-address"></label>
+  <label>Suburb<input type="text" name="contact-detail-suburb"></label>
+  <label>State<input type="text" value="NSW" name="contact-detail-state"></label>
+  <label>Postcode<input type="text" name="contact-detail-postcode"></label>
+  <button type="submit" data-theme="b" value="Send">Send</button>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+  // Convert date and time for train
+  $(document).on('change', '#train #raw-date', function (event) {
+      var date = moment(event.target.value);
+      console.log(date.format('DD/MM/YYYY', 'YYYY-MM-DD'));
+      $('#train input[name="date-of-trip"]').val(date.format('DD/MM/YYYY'));
+    } );
+
+  $(document).on('change', '#train #begin-time', function (event) {
+      var date = moment(event.target.value, 'HH:mm');
+      console.log(date.format('HH:mm'));
+      $('#train input[name="time-of-trip-begin-hour"]').val(date.format('HH'));
+      $('#train input[name="time-of-trip-begin-minute"]').val(date.format('mm')); 
+    } );
+
+  $(document).on('change', '#train #end-time', function (event) {
+      var date = moment(event.target.value, 'HH:mm');
+      console.log(date.format('HH:mm'));
+      $('#train input[name="time-of-trip-end-hour"]').val(date.format('HH'));
+      $('#train input[name="time-of-trip-end-minute"]').val(date.format('mm'));      
+    } );
+
+  // Convert date and time for bus
+  $(document).on('change', '#bus #raw-date', function (event) {
+      var date = moment(event.target.value);
+      console.log(date.format('DD/MM/YYYY', 'YYYY-MM-DD'));
+      $('#bus input[name="date-of-trip"]').val(date.format('DD/MM/YYYY'));
+    } );
+
+  $(document).on('change', '#bus #begin-time', function (event) {
+      var date = moment(event.target.value, 'HH:mm');
+      console.log(date.format('HH:mm'));
+      $('#bus input[name="time-of-trip-begin-hour"]').val(date.format('HH'));
+      $('#bus input[name="time-of-trip-begin-minute"]').val(date.format('mm'));      
+    } );
+
+  $(document).on('change', '#bus #end-time', function (event) {
+      var date = moment(event.target.value, 'HH:mm');
+      console.log(date.format('HH:mm'));
+      $('#bus input[name="time-of-trip-end-hour"]').val(date.format('HH'));
+      $('#bus input[name="time-of-trip-end-minute"]').val(date.format('mm'));      
+    } );
+    
+</script>
+</body>
+</html>
