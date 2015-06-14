@@ -188,6 +188,23 @@
       $('#bus input[name="time-of-trip-end-hour"]').val(date.format('HH'));
       $('#bus input[name="time-of-trip-end-minute"]').val(date.format('mm'));      
     } );
+
+$('[data-role=page]').on('pageshow', function (event, ui) {
+    try {
+        _gaq.push(['_setAccount', 'UA-64093722-1']);
+
+        hash = location.hash;
+
+        if (hash) {
+            _gaq.push(['_trackPageview', hash.substr(1)]);
+        } else {
+            _gaq.push(['_trackPageview']);
+        }
+    } catch(err) {
+
+    }
+
+});
     
 </script>
 </body>
