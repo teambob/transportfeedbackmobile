@@ -201,15 +201,7 @@
 
 $('[data-role=page]').on('pageshow', function (event, ui) {
     try {
-        _gaq.push(['_setAccount', 'UA-64093722-1']);
-
-        hash = location.hash;
-
-        if (hash) {
-            _gaq.push(['_trackPageview', hash.substr(1)]);
-        } else {
-            _gaq.push(['_trackPageview']);
-        }
+    	ga('send', 'pageview', location.toString());
     } catch(err) {
 
     }
